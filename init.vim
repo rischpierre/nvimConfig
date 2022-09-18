@@ -15,4 +15,8 @@ command SourceInit source ~/.config/nvim/init.vim
 
 call plug#begin()
 Plug 'github/copilot.vim'
+Plug '907th/vim-auto-save'
 call plug#end()
+
+
+let g:auto_save = 1 " enable auto save
