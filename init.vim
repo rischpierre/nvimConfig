@@ -16,6 +16,8 @@ command SourceInit source ~/.config/nvim/init.vim
 call plug#begin()
 Plug 'github/copilot.vim'
 Plug '907th/vim-auto-save'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
