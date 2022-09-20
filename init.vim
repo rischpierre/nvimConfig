@@ -5,8 +5,6 @@ set background=light
 colorscheme PaperColor
 
 
-
-
 " Maps
 tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
 noremap <a-l> :bnext<cr>
