@@ -4,13 +4,13 @@ set number
 set background=light
 colorscheme PaperColor
 
+set splitbelow
+
 
 " Maps
 tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
 noremap <a-l> :bnext<cr>
 noremap <a-h> :bprevious<cr>
-
-
 
 
 " Commands 
