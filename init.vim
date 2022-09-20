@@ -2,7 +2,7 @@ set number
 
 " Themes
 set background=light
-colorscheme PaperColor
+" colorscheme PaperColor
 
 " Window
 set splitbelow
@@ -18,6 +18,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
