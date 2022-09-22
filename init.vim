@@ -1,4 +1,5 @@
 set number
+set clipboard=unnamedplus  " in order to use: "+y to put the yank register into the clipboard
 
 " Themes
 set background=light
@@ -9,6 +10,7 @@ set splitbelow
 
 " Maps
 tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
+
 
 " Plugins
 call plug#begin()
@@ -21,7 +23,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'knsh14/vim-github-link'
-Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Autosave config
