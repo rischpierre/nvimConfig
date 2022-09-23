@@ -1,5 +1,8 @@
 set number
 set clipboard=unnamedplus  " in order to use: "+y to put the yank register into the clipboard
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Themes
 set background=light
