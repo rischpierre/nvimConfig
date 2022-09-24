@@ -15,7 +15,7 @@ set splitbelow
 " Maps
 let mapleader = " "
 nnoremap <leader>v :e $MYVIMRC<CR>
-nnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
+tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
 
 " Plugins
 call plug#begin()
