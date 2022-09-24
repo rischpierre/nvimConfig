@@ -4,6 +4,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+
 " Themes
 set background=light
 " colorscheme PaperColor
@@ -12,12 +13,14 @@ set background=light
 set splitbelow
 
 " Maps
-tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
-
+let mapleader = " "
+nnoremap <leader>v :e $MYVIMRC<CR>
+nnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
 
 " Plugins
 call plug#begin()
 Plug 'github/copilot.vim'
+Plug 'puremourning/vimspector'
 Plug '907th/vim-auto-save'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
@@ -36,4 +39,16 @@ let g:auto_save = 1 " enable auto save
 nnoremap <C-p> :Files<CR>
 nnoremap <C-o> :Buffers<CR>
 let g:fzf_layout = {'down': '40%'}
+
+
+" vimspector config
+let g:vimspector_enable_mappings = 'HUMAN'
+nnoremap <leader>sd :call vimspector#Launch()<CR>
+nnoremap <leader>kd :call vimspector#Reset()<CR>
+nnoremap <leader>c :call vimspector#Continue()<CR>
+nnoremap <leader>n :call vimspector#StepOver()<CR>
+nnoremap <leader>so :call vimspector#StepOut()<CR>
+nnoremap <leader>si :call vimspector#StepInto()<CR>
+nnoremap <leader>r :call vimspector#RunToCursor()<CR>
+nnoremap <leader>bp :call vimspector#ToggleBreakpoint()<CR>
 
