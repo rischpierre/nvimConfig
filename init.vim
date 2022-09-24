@@ -42,7 +42,6 @@ let g:fzf_layout = {'down': '40%'}
 
 
 " vimspector config
-let g:vimspector_enable_mappings = 'HUMAN'
 nnoremap <leader>sd :call vimspector#Launch()<CR>
 nnoremap <leader>kd :call vimspector#Reset()<CR>
 nnoremap <leader>c :call vimspector#Continue()<CR>
