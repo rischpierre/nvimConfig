@@ -16,6 +16,10 @@ set splitbelow
 let mapleader = " "
 nnoremap <leader>v :e $MYVIMRC<CR>
 tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
+nnoremap <A-j> <C-w>j " in order to use Alt+j to move to the window below
+nnoremap <A-k> <C-w>k
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
 
 " Plugins
 call plug#begin()
