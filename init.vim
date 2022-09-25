@@ -50,4 +50,5 @@ nnoremap <leader>so :call vimspector#StepOut()<CR>
 nnoremap <leader>si :call vimspector#StepInto()<CR>
 nnoremap <leader>r :call vimspector#RunToCursor()<CR>
 nnoremap <leader>bp :call vimspector#ToggleBreakpoint()<CR>
+" nnoremap <leader>bc :call vimspector#ToggleConditionalBreakpoint( { condition: "i < 4"} )<CR>
 
