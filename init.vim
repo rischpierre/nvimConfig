@@ -4,6 +4,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set ignorecase 
+set smartcase " both need to set for the smartcase
+
 
 " Themes
 set background=light
@@ -43,7 +46,6 @@ let g:auto_save = 1 " enable auto save
 nnoremap <C-p> :Files<CR>
 nnoremap <C-o> :Buffers<CR>
 let g:fzf_layout = {'down': '40%'}
-
 
 " vimspector config
 nnoremap <leader>sd :call vimspector#Launch()<CR>
