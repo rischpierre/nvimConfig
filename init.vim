@@ -23,6 +23,7 @@ nnoremap <A-j> <C-w>j " in order to use Alt+j to move to the window below
 nnoremap <A-k> <C-w>k
 nnoremap <A-h> <C-w>h
 nnoremap <A-l> <C-w>l
+nnoremap <A-c> :"+y<CR>
 
 " Plugins
 call plug#begin()
