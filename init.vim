@@ -38,6 +38,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'knsh14/vim-github-link'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 " Autosave config
