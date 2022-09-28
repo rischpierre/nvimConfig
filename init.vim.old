@@ -1,0 +1,62 @@
+set number
+set clipboard=unnamedplus  " in order to use: "+y to put the yank register into the clipboard
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set ignorecase 
+set smartcase " both need to set for the smartcase
+set spell spelllang=en_us
+
+" Themes
+set background=light
+
+" Window
+set splitbelow
+
+" Maps
+let mapleader = " "
+nnoremap <leader>v :e $MYVIMRC<CR>
+tnoremap <Esc> <C-\><C-n> " in order to use ESC to exit terminal mode
+nnoremap <A-j> <C-w>j " in order to use Alt+j to move to the window below
+nnoremap <A-k> <C-w>k
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-c> :"+y<CR>
+map <esc> :noh<CR> " in order to use ESC to clear the search highlight
+
+" Plugins
+call plug#begin()
+Plug 'github/copilot.vim'
+Plug 'puremourning/vimspector'
+Plug '907th/vim-auto-save'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'knsh14/vim-github-link'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
+call plug#end()
+
+" Autosave config
+let g:auto_save = 1 " enable auto save
+
+" Fzf config
+nnoremap <C-p> :Files<CR>
+nnoremap <C-o> :Buffers<CR>
+let g:fzf_layout = {'down': '40%'}
+
+" vimspector config
+nnoremap <leader>sd :call vimspector#Launch()<CR>
+nnoremap <leader>kd :call vimspector#Reset()<CR>
+nnoremap <leader>c :call vimspector#Continue()<CR>
+nnoremap <leader>n :call vimspector#StepOver()<CR>
+nnoremap <leader>so :call vimspector#StepOut()<CR>
+nnoremap <leader>si :call vimspector#StepInto()<CR>
+nnoremap <leader>r :call vimspector#RunToCursor()<CR>
+nnoremap <leader>bp :call vimspector#ToggleBreakpoint()<CR>
+" nnoremap <leader>bc :call vimspector#ToggleConditionalBreakpoint( { condition: "i < 4"} )<CR>
+
