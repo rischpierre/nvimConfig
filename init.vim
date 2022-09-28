@@ -25,6 +25,8 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-l> <C-w>l
 nnoremap <A-c> :"+y<CR>
 
+map <esc> :noh<CR> " in order to use ESC to clear the search highlight
+
 " Plugins
 call plug#begin()
 Plug 'github/copilot.vim'
