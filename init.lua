@@ -19,12 +19,15 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
+
 vim.api.nvim_set_keymap("n", "<A-c>", '":+y<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true}) -- in order to use ESC to exit terminal mode
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", {noremap = true, silent = true})
 
 -- set word uppercase
-vim.api.nvim_set_keymap("n", "<A-S-U>", "viw<S-U>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-U>", "viw<S-U>e", {noremap = true, silent = true})
 
 
 vim.g.auto_save = true
