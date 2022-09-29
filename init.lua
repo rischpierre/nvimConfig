@@ -22,9 +22,9 @@ vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {noremap = true, silent = true})
 -- TODO keymap for resizing the window
 vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = true})
 -- vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
-
--- copy yanked text
-vim.api.nvim_set_keymap("n", "<A-c>", '":+y<CR>', {noremap = true, silent = true})
+ 
+-- copy shortcut 
+vim.api.nvim_set_keymap("x", "<A-c>", ':y"+y<CR>', {noremap = true, silent = true})
 --
 -- in order to use ESC to exit terminal mode
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
