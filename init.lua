@@ -66,3 +66,20 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 call plug#end()
 ]]
+
+-- function to close all buffers excepts the ones openeds
+-- type `call CloseHiddenBuffers()` in the command mode
+vim.cmd [[
+function! CloseHiddenBuffers()
+  let i = 0
+  let n = bufnr('$')
+  while i < n
+    let i = i + 1
+    if bufloaded(i) && bufwinnr(i) < 0
+      exe 'bd! ' . i
+    endif
+  endwhile
+endfun
+]]
+
+
