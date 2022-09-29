@@ -1,5 +1,4 @@
 vim.opt.number = true
-
 vim.opt.clipboard = "unnamedplus" -- in order to use: "+y to put the yank register into the clipboard
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -25,9 +24,13 @@ vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = tr
 -- vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<A-c>", '":+y<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true}) -- in order to use ESC to exit terminal mode
-vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", {noremap = true, silent = true}) -- set word uppercase vim.api.nvim_set_keymap("n", "<A-S-U>", "viw<S-U>e", {noremap = true, silent = true})
+--
+-- in order to use ESC to exit terminal mode
+vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", {noremap = true, silent = true})
 
+-- set word uppercase 
+vim.api.nvim_set_keymap("n", "<A-S-U>", "viw<S-U>e", {noremap = true, silent = true})
 
 vim.g.auto_save = true
 
