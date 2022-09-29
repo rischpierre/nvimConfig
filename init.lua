@@ -6,7 +6,6 @@ vim.opt.expandtab = true
 
 vim.opt.ignorecase = true 
 vim.opt.smartcase = true -- both need to set for the smartcase
--- vim.opt.spell = "spelllang=en_us"
 
 vim.opt.mouse = "a" -- enable mouse in normal mode
 vim.opt.splitbelow = true
@@ -83,3 +82,6 @@ endfun
 ]]
 
 
+
+-- Notes 
+-- to search through cmd history type: `: and <C-f>`
