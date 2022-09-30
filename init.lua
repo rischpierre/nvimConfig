@@ -12,7 +12,7 @@ vim.opt.splitbelow = true
 vim.opt.background = "light"
 
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap("n", "<leader>v", ":e $MYVIMRC<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>v", ":tabe $MYVIMRC<CR>", {noremap = true, silent = true})
 
 -- tabs keymaps
 vim.api.nvim_set_keymap("n", "<A-S-h>", ":tabp<CR>", {noremap = true, silent = true})
