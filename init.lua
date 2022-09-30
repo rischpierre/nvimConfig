@@ -13,18 +13,19 @@ vim.opt.background = "light"
 
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader>v", ":tabe $MYVIMRC<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>so", ":so %<CR>", {noremap = true, silent = true})
 
 -- tabs keymaps
-vim.api.nvim_set_keymap("n", "<A-S-h>", ":tabp<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-S-l>", ":tabn<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-S-x>", ":tabclose<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-S-n>", ":tabnew<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-h>", ":tabp<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-l>", ":tabn<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-x>", ":tabclose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-n>", ":tabnew<CR>", {noremap = true, silent = true})
 
 -- window keymaps
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-j>", "<C-w>j", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-k>", "<C-w>k", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-h>", "<C-w>h", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-l>", "<C-w>l", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = true})
 -- TODO vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
  
@@ -63,6 +64,12 @@ vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, s
 -- pathTracer
 vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
 
+-- lsp
+vim.api.nvim_set_keymap('n', '<leader>gdc', ':lua vim.lsp.buf.declaration()<cr>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gdf', ':lua vim.lsp.buf.definition()<cr>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<cr>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gr', ':lua vim.lsp.buf.references()<cr>', {noremap = true, silent = false})
+
 -- plugins and theme
 vim.cmd [[
 call plug#begin()
@@ -79,6 +86,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'knsh14/vim-github-link'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 call plug#end()
 
 colorscheme PaperColor
@@ -100,7 +110,19 @@ function! CloseHiddenBuffers()
 endfun
 ]]
 
+-- treesitter config
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {"lua", "python", "cpp", "bash", "make"},
+    auto_install = true,
+    highlight = {enable = true, },
+    indent = {enable = true, },
+}
 
+local lsp_installer = require("nvim-lsp-installer")
+lsp_installer.on_server_ready(function(server)
+    local opts = {}
+    server:setup(opts)
+end)
 
 -- Notes 
 -- to search through cmd history type: `: and <C-f>`
