@@ -40,14 +40,14 @@ vim.api.nvim_set_keymap("n", "<C-o>", ":Buffers<CR>", {noremap = true, silent = 
 vim.g.fzf_layout = {down = '40%'}
 
 -- vimspector config
-vim.api.nvim_set_keymap("n", "<leader>sd", ':call vimspector#Launch()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>kd", ':call vimspector#Reset()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>c", ':call vimspector#Continue()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>n", ':call vimspector#StepOver()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>so", ':call vimspector#StepOut()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>si", ':call vimspector#StepInto()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>r", ':call vimspector#RunToCursor()<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>bp", ':call vimspector#ToggleBreakpoint()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>ds", ':call vimspector#Launch()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dk", ':call vimspector#Reset()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dc", ':call vimspector#Continue()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dn", ':call vimspector#StepOver()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dso", ':call vimspector#StepOut()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dsi", ':call vimspector#StepInto()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>dr", ':call vimspector#RunToCursor()<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>db", ':call vimspector#ToggleBreakpoint()<CR>', {noremap = true, silent = false})
 
 -- make shortcuts
 vim.api.nvim_set_keymap("n", "<leader>md", ':make debugst<CR>', {noremap = true, silent = false})
