@@ -49,6 +49,14 @@ vim.api.nvim_set_keymap("n", "<leader>si", ':call vimspector#StepInto()<CR>', {n
 vim.api.nvim_set_keymap("n", "<leader>r", ':call vimspector#RunToCursor()<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap("n", "<leader>bp", ':call vimspector#ToggleBreakpoint()<CR>', {noremap = true, silent = false})
 
+-- make shortcuts
+vim.api.nvim_set_keymap("n", "<leader>md", ':make debugst<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>m", ':make<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, silent = false})
+
+-- pathTracer
+vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
+
 vim.cmd [[
 call plug#begin()
 Plug 'github/copilot.vim'
