@@ -13,14 +13,20 @@ vim.opt.background = "light"
 
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader>v", ":e $MYVIMRC<CR>", {noremap = true, silent = true})
+
+-- tabs keymaps
+vim.api.nvim_set_keymap("n", "<A-S-h>", ":tabp<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-l>", ":tabn<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-x>", ":tabclose<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<A-S-n>", ":tabnew<CR>", {noremap = true, silent = true})
+
+-- window keymaps
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", {noremap = true, silent = true})
-
--- TODO keymap for resizing the window
 vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = true})
--- vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
+-- TODO vim.api.nvim_set_keymap("n", "<C-A-S-\\=>", "<C-w>-", {noremap = true, silent = true})
  
 -- copy shortcut 
 vim.api.nvim_set_keymap("x", "<A-c>", ':y"+y<CR>', {noremap = true, silent = true})
