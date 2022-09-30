@@ -63,6 +63,7 @@ vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, s
 -- pathTracer
 vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
 
+-- plugins and theme
 vim.cmd [[
 call plug#begin()
 Plug 'github/copilot.vim'
@@ -72,12 +73,16 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'knsh14/vim-github-link'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 call plug#end()
+
+colorscheme PaperColor
+set background=light
 ]]
 
 -- function to close all buffers excepts the ones openeds
