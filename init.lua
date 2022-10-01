@@ -93,6 +93,7 @@ call plug#end()
 
 colorscheme PaperColor
 set background=light
+let g:airline#extensions#tabline#fnamemod = ':t'
 ]]
 
 -- function to close all buffers excepts the ones openeds
@@ -113,7 +114,7 @@ endfun
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {"lua", "python", "cpp", "bash", "make"},
-    auto_install = true,
+    auto_install = false,
     highlight = {enable = true, },
     indent = {enable = true, },
 }
