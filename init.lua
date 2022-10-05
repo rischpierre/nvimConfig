@@ -96,20 +96,12 @@ set background=light
 let g:airline#extensions#tabline#fnamemod = ':t'
 ]]
 
--- function to close all buffers excepts the ones openeds
--- type `call CloseHiddenBuffers()` in the command mode
+
+-- add todo to the syntax
 vim.cmd [[
-function! CloseHiddenBuffers()
-  let i = 0
-  let n = bufnr('$')
-  while i < n
-    let i = i + 1
-    if bufloaded(i) && bufwinnr(i) < 0
-      exe 'bd! ' . i
-    endif
-  endwhile
-endfun
+    syntax keyword Todo todo   
 ]]
+
 
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
