@@ -119,3 +119,4 @@ end)
 
 -- Notes 
 -- to search through cmd history type: `: and <C-f>`
+-- to copy a github/gitlab url: GetCurrentBranchLink
