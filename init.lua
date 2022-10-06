@@ -23,6 +23,9 @@ vim.api.nvim_set_keymap("n", "<A-n>", ":tabnew<CR>", {noremap = true, silent = t
 vim.api.nvim_set_keymap("n", "<C-A-S-h>", ":tabm -1<CR>", {noremap = true, silent = true})  -- move tabs 
 vim.api.nvim_set_keymap("n", "<C-A-S-l>", ":tabm +1<CR>", {noremap = true, silent = false})
 
+-- BUFFERS
+vim.api.nvim_set_keymap("n", "<leader>bda", ":%bd! | e#<CR>", {noremap = true, silent = false}) -- delete all buffers except current
+
 -- WINDOW 
 vim.api.nvim_set_keymap("n", "<A-S-j>", "<C-w>j", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-S-k>", "<C-w>k", {noremap = true, silent = true})
@@ -43,8 +46,8 @@ vim.api.nvim_set_keymap("n", "<A-S-U>", "viw<S-U>e", {noremap = true, silent = t
 vim.g.auto_save = true
 
 -- Fzf config
-vim.api.nvim_set_keymap("n", "<C-p>", ":Files<CR>", {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<C-o>", ":Buffers<CR>", {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<C-p>", ":tabnew | Files<CR>", {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>ff", ":tabnew | Ag<CR>", {noremap = true, silent = false})
 vim.g.fzf_layout = {down = '40%'}
 
 -- vimspector config
@@ -64,6 +67,12 @@ vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, s
 
 -- pathTracer
 vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
+
+
+-- FORMAT
+-- todo need to give the lines to the formatter to format by line 
+vim.api.nvim_set_keymap('n', '<leader>fc', ':!clang-format -i % <CR>', {noremap = true, silent = false})
+
 
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>gdc', ':lua vim.lsp.buf.declaration()<cr>', {noremap = true, silent = false})
@@ -90,6 +99,7 @@ Plug 'tpope/vim-obsession'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+Plug 'gcmt/taboo.vim'
 call plug#end()
 
 colorscheme PaperColor
@@ -101,7 +111,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 vim.cmd [[
     syntax keyword Todo todo   
 ]]
-
 
 -- treesitter config
 require'nvim-treesitter.configs'.setup {
@@ -120,3 +129,6 @@ end)
 -- Notes 
 -- to search through cmd history type: `: and <C-f>`
 -- to copy a github/gitlab url: GetCurrentBranchLink
+-- to go back/forward to the last position: <C-o> and <C-i>
+-- to rename a tab: :TabooRename <new name>
+
