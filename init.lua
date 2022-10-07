@@ -20,8 +20,8 @@ vim.api.nvim_set_keymap("n", "<A-h>", ":tabp<CR>", {noremap = true, silent = tru
 vim.api.nvim_set_keymap("n", "<A-l>", ":tabn<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-x>", ":tabclose<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-n>", ":tabnew<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<C-A-S-h>", ":tabm -1<CR>", {noremap = true, silent = true})  -- move tabs 
-vim.api.nvim_set_keymap("n", "<C-A-S-l>", ":tabm +1<CR>", {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>th", ":tabm -1<CR>", {noremap = true, silent = true})  -- move tabs 
+vim.api.nvim_set_keymap("n", "<leader>tl", ":tabm +1<CR>", {noremap = true, silent = false})
 
 -- BUFFERS
 vim.api.nvim_set_keymap("n", "<leader>bda", ":%bd! | e#<CR>", {noremap = true, silent = false}) -- delete all buffers except current
