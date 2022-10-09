@@ -67,6 +67,7 @@ vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, s
 
 -- pathTracer
 vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap("n", "<leader>ptrc", ':make clean | make | !./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
 
 
 -- FORMAT
