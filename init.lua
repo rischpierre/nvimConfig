@@ -67,12 +67,19 @@ vim.api.nvim_set_keymap("n", "<leader>mc", ':make clean<CR>', {noremap = true, s
 
 -- pathTracer
 vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap("n", "<leader>ptrc", ':make clean | make | !./build/pathTracer examples/cornell.usda<CR>', {noremap = true, silent = false})
 
 
 -- FORMAT
 -- todo need to give the lines to the formatter to format by line 
 vim.api.nvim_set_keymap('n', '<leader>fc', ':!clang-format -i % <CR>', {noremap = true, silent = false})
+
+-- todo copy shortcuts 
+
+  --nnoremap <leader>cf :let @*=expand("%")<CR>
+  --nnoremap <leader>cF :let @*=expand("%:p")<CR>
+  --nnoremap <leader>ct :let @*=expand("%:t")<CR>
+  --nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
+
 
 
 -- lsp
