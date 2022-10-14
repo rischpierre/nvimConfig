@@ -90,7 +90,7 @@ Plug 'puremourning/vimspector'
 Plug '907th/vim-auto-save'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
