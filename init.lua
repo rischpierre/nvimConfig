@@ -13,7 +13,7 @@ vim.opt.background = "light"
 
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap("n", "<leader>v", ":tabe $MYVIMRC<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>so", ":so %<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>so", ":so %<CR>", {noremap = true, silent = false})
 
 -- TABS 
 vim.api.nvim_set_keymap("n", "<A-h>", ":tabp<CR>", {noremap = true, silent = true})
@@ -33,9 +33,12 @@ vim.api.nvim_set_keymap("n", "<A-S-h>", "<C-w>h", {noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "<A-S-l>", "<C-w>l", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<A-S-\\=>", "<C-w>+", {noremap = true, silent = true})
  
--- copy shortcut 
+-- Copy shortcuts
 vim.api.nvim_set_keymap("x", "<A-c>", ':y"+y<CR>', {noremap = true, silent = true})
---
+-- todo
+-- vim.api.nvim_set_keymap('n', '<leader>cf', ':let @"=expand("%") | "+y<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>cgh', ':GetCurrentBranchLink<CR>', {noremap = true, silent = false})
+
 -- in order to use ESC to exit terminal mode
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<Esc>", ":noh<CR>", {noremap = true, silent = true})
@@ -72,15 +75,6 @@ vim.api.nvim_set_keymap("n", "<leader>ptr", ':!./build/pathTracer examples/corne
 -- FORMAT
 -- todo need to give the lines to the formatter to format by line 
 vim.api.nvim_set_keymap('n', '<leader>fc', ':!clang-format -i % <CR>', {noremap = true, silent = false})
-
--- todo copy shortcuts 
-
-  --nnoremap <leader>cf :let @*=expand("%")<CR>
-  --nnoremap <leader>cF :let @*=expand("%:p")<CR>
-  --nnoremap <leader>ct :let @*=expand("%:t")<CR>
-  --nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
-
-
 
 -- lsp
 vim.api.nvim_set_keymap('n', '<leader>gdc', ':lua vim.lsp.buf.declaration()<cr>', {noremap = true, silent = false})
@@ -136,7 +130,6 @@ end)
 
 -- Notes 
 -- to search through cmd history type: `: and <C-f>`
--- to copy a github/gitlab url: GetCurrentBranchLink
 -- to go back/forward to the last position: <C-o> and <C-i>
 -- to rename a tab: :TabooRename <new name>
 
