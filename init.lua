@@ -63,6 +63,31 @@ vim.api.nvim_set_keymap("n", "<leader>dsi", ':call vimspector#StepInto()<CR>', {
 vim.api.nvim_set_keymap("n", "<leader>dr", ':call vimspector#RunToCursor()<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap("n", "<leader>db", ':call vimspector#ToggleBreakpoint()<CR>', {noremap = true, silent = false})
 
+-- vimspector debug configs:
+--[[
+{
+  "configurations": {
+    "pythonRemote": {
+      "adapter": "multi-session",
+      "filetypes": [ "python"],
+      "configuration": {
+        "request": "attach",
+        "connect": {
+          "host": "localhost",
+          "port": 5678
+        }
+      }
+    }
+  }
+}
+-- in code:
+import debugpy
+debugpy.listen(5678)
+debugpy.wait_for_client()
+
+--]]
+
+
 -- make shortcuts
 vim.api.nvim_set_keymap("n", "<leader>md", ':make debugst<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap("n", "<leader>m", ':make<CR>', {noremap = true, silent = false})
